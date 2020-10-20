@@ -22,7 +22,7 @@ router.beforeEach((to, from, next) => {
     return next();
   }
 
-  nearestWithMetatags.meta.meattags.foEach((tagDef) => {
+  nearestWithMetatags.meta.metatags.forEach((tagDef) => {
     const tag = document.createElement('meta');
 
     Object.entries(tagDef).forEach(([tagName, tagContent]) => {
