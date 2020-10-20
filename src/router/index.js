@@ -11,11 +11,20 @@ const routes = [
     path: '/',
     name: 'HomeView',
     component: HomeView,
+    meta: {
+      title: 'Shop - Home',
+      metatags: [
+        { name: 'description', content: 'The home page of our example app.' },
+      ],
+    },
   },
   {
     path: '*',
     name: 'NotFoundView',
     component: NotFoundView,
+    meta: {
+      title: 'Shop - Not found',
+    },
   },
 ];
 

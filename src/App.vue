@@ -1,8 +1,11 @@
 <template>
   <div id="app">
       <TheHeader />
-    <router-view />
+      <transition mode="out-in" name="fade" appear>
+      <router-view />
+      </transition>
     <TheFooter />
+
   </div>
 </template>
 
@@ -21,4 +24,5 @@ export default {
 
 <style lang="scss">
   @import 'styles/main.scss';
+
 </style>
