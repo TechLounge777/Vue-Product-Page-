@@ -1,4 +1,7 @@
 import { getPromotions } from '@/utils/api';
+import * as actionTypes from './action-types';
+import * as getterTypes from './getter-types';
+import * as mutationTypes from './mutation-types';
 
 const promotions = {
   state: {
@@ -7,40 +10,40 @@ const promotions = {
     promotionsError: null,
   },
   mutations: {
-    SET_PROMOTIONS_LIST(state, newPromotions) {
+    [mutationTypes.SET_PROMOTIONS_LIST](state, newPromotions) {
       state.promotionsList = newPromotions;
     },
-    SET_PROMOTIONS_LOADING(state, isLoading) {
+    [mutationTypes.SET_PROMOTIONS_LOADING](state, isLoading) {
       state.promotionsLoading = isLoading;
     },
-    SET_PROMOTIONS_ERROR(state, error) {
+    [mutationTypes.SET_PROMOTIONS_ERROR](state, error) {
       state.promotionsError = error;
     },
   },
   getters: {
-    GET_PROMOTIONS_LIST(state) {
+    [getterTypes.GET_PROMOTIONS_LIST](state) {
       return state.promotionsList;
     },
-    GET_PROMOTIONS_LOADING(state) {
+    [getterTypes.GET_PROMOTIONS_LOADING](state) {
       return state.promotionsLoading;
     },
-    GET_PROMOTIONS_ERROR(state) {
+    [getterTypes.GET_PROMOTIONS_ERROR](state) {
       return state.promotionsError;
     },
   },
   actions: {
-    FETCH_PROMOTIONS({ state, commit }) {
+    [actionTypes.FETCH_PROMOTIONS]({ state, commit }) {
       if (state.promotionsLoading || state.GET_PROMOTIONS_LIST.length) return;
-      commit('SET_PROMOTIONS_LOADING', true);
+      commit(mutationTypes.SET_PROMOTIONS_LIST, true);
       getPromotions()
         .then((data) => {
-          commit('SET_PROMOTIONS_LIST', data);
+          commit(mutationTypes.SET_PROMOTIONS_LOADING, data);
         })
         .catch(() => {
-          commit('SET_PROMOTIONS_ERROR', 'Server error');
+          commit(mutationTypes.SET_PROMOTIONS_ERROR, 'Server error');
         })
         .finally(() => {
-          commit('SET_PROMOTIONS_LOADING', false);
+          commit(mutationTypes.SET_PROMOTIONS_LOADING, false);
         });
     },
   },
