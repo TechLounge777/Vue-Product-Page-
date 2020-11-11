@@ -37,10 +37,10 @@ export default {
       promotionsError: getterTypes.GET_PROMOTIONS_ERROR,
     }),
     promotionsVisible() {
-      return !this.promotionsLoading && this.promotionsError;
+      return !this.promotionsLoading && !this.promotionsError;
     },
     errorVisible() {
-      return !this.promotionsLoading && !this.promotionsError;
+      return !this.promotionsLoading && this.promotionsError;
     },
   },
   created() {

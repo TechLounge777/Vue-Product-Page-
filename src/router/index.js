@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import PromotionView from '../views/PromotionView.vue';
 
 const NotFoundView = () => import('../views/NotFoundView.vue');
 
@@ -16,6 +17,14 @@ const routes = [
       metatags: [
         { name: 'description', content: 'The home page of our example app.' },
       ],
+    },
+  },
+  {
+    path: '/promotion/:id',
+    name: 'promotionView',
+    component: PromotionView,
+    meta: {
+      title: 'Shop - Promotion',
     },
   },
   {
