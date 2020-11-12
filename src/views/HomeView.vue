@@ -1,5 +1,6 @@
 <template>
 <div class="view home-view">
+  <h1>Home</h1>
       <AppLoader v-show="promotionsLoading" />
       <ServerError v-show="errorVisible" @click.native="fetchPromotions" />
       <div v-show="promotionsVisible">

@@ -1,7 +1,7 @@
 <template>
   <div class="the-footer">
       <div class="container">
-    @ 2020 shop
+     © 2020 shop
       </div>
   </div>
 </template>

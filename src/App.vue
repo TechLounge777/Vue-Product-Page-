@@ -5,7 +5,6 @@
       <router-view />
       </transition>
     <TheFooter />
-
   </div>
 </template>
 
