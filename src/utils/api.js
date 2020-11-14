@@ -17,7 +17,12 @@ const get = (url) => new Promise((resolve, reject) => {
 
 const getPromotions = () => get('/promotions');
 
+const getPromotion = (promotionId) => get(`/promotions/${promotionId}`);
+
+const getProduct = (productId) => get(`/products/${productId}`);
+
 export {
-// eslint-disable-next-line
-    getPromotions,
+  getPromotions,
+  getPromotion,
+  getProduct,
 };

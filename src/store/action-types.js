@@ -1,6 +1,7 @@
 const FETCH_PROMOTIONS = 'FETCH_PROMOTIONS';
+const FETCH_PROMOTION = 'FETCH_PROMOTION';
 
 export {
-  // eslint-disable-next-line
   FETCH_PROMOTIONS,
+  FETCH_PROMOTION,
 };

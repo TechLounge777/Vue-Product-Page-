@@ -33,11 +33,12 @@ const promotions = {
   },
   actions: {
     [actionTypes.FETCH_PROMOTIONS]({ state, commit }) {
-      if (state.promotionsLoading || state.GET_PROMOTIONS_LIST.length) return;
-      commit(mutationTypes.SET_PROMOTIONS_LIST, true);
+      if (state.promotionsLoading || state.promotionsList.length) return;
+
+      commit(mutationTypes.SET_PROMOTIONS_LOADING, true);
       getPromotions()
         .then((data) => {
-          commit(mutationTypes.SET_PROMOTIONS_LOADING, data);
+          commit(mutationTypes.SET_PROMOTIONS_LIST, data);
         })
         .catch(() => {
           commit(mutationTypes.SET_PROMOTIONS_ERROR, 'Server error');
