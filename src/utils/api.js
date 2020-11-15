@@ -1,10 +1,10 @@
-const { default: Axios } = require('axios');
+import axios from 'axios';
 
 const MAX_DELAY = 2500;
 
 const get = (url) => new Promise((resolve, reject) => {
   setTimeout(() => {
-    Axios.get(url)
+    axios.get(url)
       .then((response) => {
         resolve(response.data);
       })

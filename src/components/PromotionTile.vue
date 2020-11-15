@@ -1,5 +1,5 @@
 <template>
-  <div :style="containerstyle" class="promotion-tile">
+  <div :style="containerStyle" class="promotion-tile">
       <h3>{{ promotion.header }}</h3>
       <p>{{ promotion.description }}</p>
   </div>

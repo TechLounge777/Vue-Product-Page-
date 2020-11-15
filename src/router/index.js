@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import PromotionView from '../views/PromotionView.vue';
+import RegisterView from '../views/RegisterView.vue';
 
 const NotFoundView = () => import('../views/NotFoundView.vue');
 
@@ -25,6 +26,14 @@ const routes = [
     component: PromotionView,
     meta: {
       title: 'Shop - Promotion',
+    },
+  },
+  {
+    path: '/register',
+    name: 'RegisterView',
+    component: RegisterView,
+    meta: {
+      title: 'Shop - Register',
     },
   },
   {
