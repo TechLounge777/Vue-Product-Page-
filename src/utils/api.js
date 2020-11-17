@@ -21,8 +21,11 @@ const getPromotion = (promotionId) => get(`/promotions/${promotionId}`);
 
 const getProduct = (productId) => get(`/products/${productId}`);
 
+const postUser = () => get('/promotions');
+
 export {
   getPromotions,
   getPromotion,
   getProduct,
+  postUser,
 };
