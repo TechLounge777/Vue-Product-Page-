@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import PromotionView from '../views/PromotionView.vue';
 import RegisterView from '../views/RegisterView.vue';
+import LoginView from '../views/LoginView.vue';
 
 const NotFoundView = () => import('../views/NotFoundView.vue');
 
@@ -34,6 +35,14 @@ const routes = [
     component: RegisterView,
     meta: {
       title: 'Shop - Register',
+    },
+  },
+  {
+    path: '/login',
+    name: 'LoginView',
+    component: LoginView,
+    meta: {
+      title: 'Shop - Login',
     },
   },
   {
