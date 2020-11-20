@@ -17,6 +17,7 @@
 
 <script>
 import AppLoader from '@/components/AppLoader.vue';
+import * as actionTypes from '@/store/action-types';
 
 export default {
   name: 'registerView',
@@ -43,6 +44,14 @@ export default {
       } else {
         this.loading = true;
         this.error = '';
+        this.$store.dispatch(actionTypes.LOGIN, { email: this.email, password: this.password })
+          .then(() => {
+            this.$router.push('/');
+          })
+          .catch(() => {
+            this.error = 'Email password is inocrrect';
+            this.loading = false;
+          });
       }
     },
   },

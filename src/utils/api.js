@@ -23,9 +23,18 @@ const getProduct = (productId) => get(`/products/${productId}`);
 
 const postUser = () => get('/promotions');
 
+const getCurrentUser = () => get('/currentUser');
+
+const login = () => get('/currentUser');
+
+const logout = () => get('/currentUser');
+
 export {
   getPromotions,
   getPromotion,
   getProduct,
   postUser,
+  getCurrentUser,
+  login,
+  logout,
 };
